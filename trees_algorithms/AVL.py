@@ -22,19 +22,15 @@ class Tree:
             else:
                 self.left.insert(number)
 
-        if self.height_difference() > 1 and number > self.right.value:
-            print("left")
+        if self.height_difference() > 1 and number >= self.right.value:
             self.LeftRotate()
         if self.height_difference() > 1 and number < self.right.value:
-            print("rightleft")
             self.right.RightRotate()
             self.LeftRotate()
-        if self.height_difference() < -1 and number > self.left.value:
-            print("leftright")
+        if self.height_difference() < -1 and number >= self.left.value:
             self.left.LeftRotate()
             self.RightRotate()
         if self.height_difference() < -1 and number < self.left.value:
-            print("right")
             self.RightRotate()
 
         self.height = 1 + max(self.left_height(), self.right_height())
