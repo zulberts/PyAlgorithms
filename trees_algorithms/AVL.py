@@ -8,6 +8,7 @@ class Tree:
     def insert(self, number):
         if self.value is None:
             self.value = number
+            return
 
         if number >= self.value:
             if self.right is None:
