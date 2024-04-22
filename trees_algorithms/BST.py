@@ -66,11 +66,32 @@ class BST:
             current = current.left
         return current
 
-    def print_tree(self, node=None, level=0, prefix="Root: "):
-        if node is None:
-            node = self.root
-        print(" " * (level * 4) + prefix + str(node.value))
-        if node.left is not None:
-            self.print_tree(node.left, level + 1, "L--- ")
-        if node.right is not None:
-            self.print_tree(node.right, level + 1, "R--- ")
+    def print_tree(self):
+        if not self.root:
+            print("Drzewo jest puste")
+            return
+        levels = []
+        current_level = [self.root]
+
+        while current_level:
+            levels.append(current_level)
+            next_level = []
+            for node in current_level:
+                if node:
+                    next_level.append(node.left)
+                    next_level.append(node.right)
+                else:
+                    next_level.append(None)
+                    next_level.append(None)
+            if not any(next_level):
+                break
+            current_level = next_level
+
+        for level, nodes in enumerate(levels):
+            print(f"Poziom {level}: ", end="")
+            for node in nodes:
+                if node:
+                    print(f"{node.value}\t", end="")
+                else:
+                    print("-\t", end="")
+            print()
