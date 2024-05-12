@@ -28,7 +28,7 @@ def create_graph_from_board(board):
                     if board[r][c] == "J":
                         cost = 0
                     elif board[r][c] == "X":
-                        cost = int(board[nr][nc])
+                        cost = int(board[nr][nc]) if board[nr][nc] != "J" else 0
                     elif board[nr][nc] == "J":
                         cost = 0
                     elif board[nr][nc] == "X":
@@ -51,6 +51,8 @@ def print_graph(graph):
 
 
 filename = "graphs_algorithms/test.txt"
+# filename = "graphs_algorithms/map1.txt"
+
 board = create_board(filename)
 graph, points_x = create_graph_from_board(board)
 
