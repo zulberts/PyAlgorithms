@@ -1,0 +1,13 @@
+_, init, _, continue, R
+0, continue, 0, continue, R
+1, continue, 1, one, R
+_, continue, _, halt, *
+0, one, 0, continue, R
+1, one, 1, two, R
+_, one, _, halt, *
+1, two, 1, three, R
+0, two, 0, continue, R
+_, two, _, halt, R
+1, three, 0, continue, R
+0, three, 0, continue, R
+_, three, _, halt, *

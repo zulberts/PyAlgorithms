@@ -6,6 +6,7 @@ class Directions(str, Enum):
     """
     LEFT = "L"
     RIGHT = "R"
+    HALT = '*'
 
 
 class Head:
@@ -63,3 +64,11 @@ class Head:
             self._move_right()
         elif direction == Directions.LEFT:
             self._move_left()
+        elif direction == Directions.HALT:
+            self.halt()
+        else:
+            raise ValueError(f"Invalid direction: {direction}")
+
+    def halt(self):
+        print("Machine halted.")
+        exit()
