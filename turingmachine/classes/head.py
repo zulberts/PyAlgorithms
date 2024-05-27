@@ -65,7 +65,7 @@ class Head:
         elif direction == Directions.LEFT:
             self._move_left()
         elif direction == Directions.HALT:
-            self.halt()
+            pass
         else:
             raise ValueError(f"Invalid direction: {direction}")
 

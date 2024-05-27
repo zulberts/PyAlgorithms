@@ -22,12 +22,14 @@ def main():
     args = parser.parse_args()
 
     tape = Tape(list(args.tapecontent))
-    header = Head(0, "init")
+    header = Head(1, "init")
     instructions = Instructions(open(args.instructionfile, "r"))
 
     move_count = 0
     while True:
         display_machine_state(tape, header)
+        if header.state() == "halt":
+            header.halt()
         try:
             instr_input = (tape.input(header.position()), header.state())
         except IndexError:
