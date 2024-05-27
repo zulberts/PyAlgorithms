@@ -8,8 +8,10 @@ def display_machine_state(tape, header):
     position = header.position()
     tape_view = "".join(tape.content())
     # Adding a marker for the head position
-    tape_view = tape_view[:position] + "^" + tape_view[position:]
+    # tape_view = tape_view[:position] + "^" + tape_view[position:]
+    tape_arrow = position * ' ' + "^"
     print(tape_view)
+    print(tape_arrow)
     print(f"Current state: {header.state()}\n")
 
 

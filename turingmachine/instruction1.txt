@@ -3,8 +3,7 @@
 _, init, _, continue, R
 0, continue, 0, continue, R
 1, continue, 1, continue, R
-_, continue, _, end, R
-_, end, _, end, L
+_, continue, _, end, L
 1, end, _, copy1, L
 0, end, _, copy0, L
 0, copy0, 0, copy0, L

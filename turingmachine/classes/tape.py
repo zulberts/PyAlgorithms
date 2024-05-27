@@ -42,6 +42,6 @@ class Tape:
         """
         if position < 0:
             raise IndexError
-        if position >= len(self._content):
-            self._content.extend(["_"] * (position - len(self._content) + 1))
+        # if position >= len(self._content):
+        #     self._content.extend(["_"] * (position - len(self._content) + 1))
         return self.content()[position]
